@@ -1,0 +1,276 @@
+
+  /* 전체 레이아웃 */
+  .detailPage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* 이미지 섹션 */
+  .imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bookImage {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* 정보 섹션 */
+  .infoSection {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .title {
+    font-size: var(--font-large);
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: var(--font-medium);
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  
+  .meta {
+    font-size: 1rem;
+    color: var(--text-highlight);
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .rating .star {
+    font-size: 1.2rem;
+    color: #f1c40f;
+  }
+  
+  .rating .reviewCount {
+    font-size: var(--font-small);
+    color: var(--text-muted);
+  }
+  
+  /* 통계 및 버튼 */
+  .stat {
+    font-size: 1rem;
+    color: var(--text-highlight);
+  }
+  
+  /* 버튼 */
+  .primaryButton, .secondaryButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .primaryButton {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .primaryButton:hover {
+    background-color: var(--primary-color-hover);
+  }
+  
+  .secondaryButton {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid #ddd;
+    margin-left: 10px;
+  }
+  
+  .secondaryButton:hover {
+    background-color: var(--secondary-color-hover);
+  }
+  
+  /* 좋아요 버튼 */
+  .likeButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .likeButton.liked {
+    color: red;
+  }
+  
+  /* 하단 섹션 */
+  .bottomSection {
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  /* 탭 */
+  .tabContainer {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tabContainer button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .tabContainer button:hover {
+    background-color: var(--secondary-color-hover);
+  }
+  
+  .tabContainer .activeTab {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .tabContent {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: #fafafa;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* 로딩 및 에러 메시지 */
+  .loading, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  /* 반응형 스타일 */
+  
+  /* 태블릿 (최대 768px) */
+  @media (max-width: 768px) {
+    .detailPage {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .bookImage {
+      max-width: 250px;
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 1.1rem;
+    }
+  
+    .rating .star {
+      font-size: 1rem;
+    }
+  
+    .rating .reviewCount {
+      font-size: 0.85rem;
+    }
+  
+    .actionButtons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .actionButtons button {
+      width: 100%;
+    }
+  
+    .likeButton {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .tabContainer {
+      gap: 10px;
+    }
+  
+    .tabContent {
+      font-size: 0.95rem;
+      padding: 15px;
+    }
+  }
+  
+  /* 모바일 (최대 480px) */
+  @media (max-width: 480px) {
+    .detailPage {
+      padding: 10px;
+      gap: 15px;
+    }
+  
+    .bookImage {
+      max-width: 200px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .meta {
+      font-size: 0.9rem;
+    }
+  
+    .rating .star {
+      font-size: 0.9rem;
+    }
+  
+    .rating .reviewCount {
+      font-size: 0.8rem;
+    }
+  
+    .tabContainer {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .tabContainer button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .tabContent {
+      font-size: 0.9rem;
+      padding: 15px;
+    }
+  
+    .likeButton {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  

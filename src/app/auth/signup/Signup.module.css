@@ -1,0 +1,175 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3182ce;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+
+.select {
+  padding-right: 24px;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 4px;
+}
+
+.emailField {
+  display: flex;
+  align-items: center; /* 입력란과 버튼을 수직 가운데 정렬 */
+  gap: 8px; /* 입력창과 버튼 사이의 간격 */
+}
+
+.inputEmail {
+  flex-grow: 1; /* 이메일 입력창을 가능한 넓게 확장 */
+}
+
+.buttonFull {
+  margin: 0; /* 버튼의 외부 여백 제거 */
+  background: #38a169; /* 버튼 배경색 */
+  color: #ffffff; /* 버튼 글자색 */
+  padding: 8px 16px; /* 버튼 패딩 */
+  border: none; /* 버튼 테두리 없음 */
+  border-radius: 4px; /* 둥근 모서리 */
+  font-size: 0.875rem; /* 버튼 글자 크기 */
+  cursor: pointer; /* 커서 모양 */
+  transition: background-color 0.3s ease; /* 배경색 변화 애니메이션 */
+}
+
+/* 호버 효과 */
+.buttonFull:hover {
+  background: #2f855a; /* 호버 시 배경색 */
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.button {
+  flex-grow: 1; /* 버튼이 동일한 크기로 확장되도록 설정 */
+  margin: 0 1px; /* 버튼 사이에 간격 추가 */
+  width: 120px;
+  height: 35px;
+  color: #2f855a; /* 글자색 */
+  padding: 0 16px; /* 패딩 */
+  border: 2px solid #2f855a; /* 라인 색상 및 두께 설정 */
+  border-radius: 4px; /* 둥근 모서리 */
+  font-size: 0.875rem; /* 글자 크기 */
+  cursor: pointer; /* 커서 모양 */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* 배경색 및 테두리 색상 변화 애니메이션 */
+}
+
+
+/* 호버 효과 */
+.button:hover {
+  background-color: #e2e8f0; /* 호버 시 배경색 */
+}
+
+/* 포커스 효과 */
+.button:focus {
+  outline: none; /* 기본 포커스 아웃라인 제거 */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* 포커스 시 그림자 효과 */
+}
+
+.togglePasswordButton {
+  flex-grow: 1; /* 버튼이 동일한 크기로 확장되도록 설정 */
+  margin: 0 1px; /* 버튼 사이에 간격 추가 */
+  width: 120px;
+  height: 35px;
+  color: #2f855a; /* 글자색 */
+  padding: 0 16px; /* 패딩 */
+  border: 2px solid #2f855a; /* 라인 색상 및 두께 설정 */
+  border-radius: 4px; /* 둥근 모서리 */
+  font-size: 0.875rem; /* 글자 크기 */
+  cursor: pointer; /* 커서 모양 */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* 배경색 및 테두리 색상 변화 애니메이션 */
+}
+
+/* 호버 효과 */
+.togglePasswordButton:hover {
+  background-color: #e2e8f0; /* 호버 시 배경색 */
+}
+
+/* 포커스 효과 */
+.togglePasswordButton:focus {
+  outline: none; /* 기본 포커스 아웃라인 제거 */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* 포커스 시 그림자 효과 */
+}
+
+.submitButton {
+  background: #38a169;
+  color: #ffffff;
+}
+
+.submitButton:hover {
+  background: #2f855a;
+}
+
+.cancelButton {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.cancelButton:hover {
+  background: #e2e8f0;
+}

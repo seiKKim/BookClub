@@ -1,0 +1,86 @@
+/* 전체 컨테이너 스타일 */
+.contentWrap {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* 제목 스타일 */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  /* 검색 바 */
+  .searchBar {
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* 사용자 목록 테이블 */
+  .userList {}
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    color: #333333;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* 상태 표시 스타일 */
+  .activeStatus {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .inactiveStatus {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* 삭제 버튼 스타일 */
+  .deleteBtn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* 데이터 없을 때 */
+  .noData {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,127 @@
+/* 전체 Footer 스타일 */
+.footer {
+  padding: 20px; /* 내부 여백 */
+  text-align: center; /* 중앙 정렬 */
+  font-family: Arial, sans-serif; /* 기본 폰트 */
+  background-color: #fff; /* 배경 색상 */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* 상단 그림자 추가 */
+}
+
+/* 로고 스타일 */
+.footLogo {
+  font-size: 20px; /* 글자 크기 */
+  font-weight: bold; /* 굵은 글씨 */
+  color: #333; /* 색상 */
+  margin-bottom: 10px; /* 아래 여백 */
+}
+
+/* 주소 스타일 */
+.address {
+  font-size: 14px; /* 글자 크기 */
+  color: #555; /* 색상 */
+  margin-bottom: 15px; /* 아래 여백 */
+}
+
+/* 정보 리스트 스타일 */
+.infoList {
+  list-style: none; /* 기본 리스트 불릿 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.infoList li {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  margin-bottom: 10px; /* 리스트 사이 여백 */
+}
+
+.infoList li a {
+  margin-left: 10px; /* 아이콘과 텍스트 사이 간격 */
+  font-size: 14px; /* 글자 크기 */
+  color: #0073e6; /* 링크 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.infoList li a:hover {
+  color: #0056b3; /* 호버 시 색상 변경 */
+}
+
+/* 아이콘 스타일 (Image 태그를 보완) */
+.infoList li img {
+  vertical-align: middle; /* 텍스트와 아이콘의 수직 정렬 */
+}
+
+/* 하단 카피라이트 스타일 */
+.copy {
+  font-size: 12px; /* 글자 크기 */
+  color: #777; /* 색상 */
+  margin-top: 15px; /* 위쪽 여백 */
+}
+
+/* === 반응형 스타일 추가 === */
+
+/* 태블릿 (폭 <= 768px) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px; /* 내부 여백 줄이기 */
+  }
+
+  .footLogo {
+    font-size: 18px; /* 글자 크기 살짝 줄이기 */
+    margin-bottom: 8px; /* 아래 여백 줄이기 */
+  }
+
+  .address {
+    font-size: 13px; /* 주소 크기 축소 */
+    margin-bottom: 12px;
+  }
+
+  .infoList li {
+    margin-bottom: 8px; /* 리스트 간격 축소 */
+  }
+
+  .infoList li a {
+    font-size: 13px; /* 링크 글자 크기 축소 */
+    margin-left: 8px; /* 아이콘과의 간격 조정 */
+  }
+
+  .copy {
+    font-size: 11px; /* 카피라이트 글자 크기 축소 */
+  }
+}
+
+/* 모바일 (폭 <= 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px; /* 내부 여백 더 줄이기 */
+  }
+
+  .footLogo {
+    font-size: 16px; /* 로고 글자 크기 더 줄이기 */
+    margin-bottom: 6px; /* 아래 여백 축소 */
+  }
+
+  .address {
+    font-size: 12px; /* 주소 글자 크기 축소 */
+    color: #666; /* 색상 살짝 어둡게 변경 */
+    margin-bottom: 10px;
+  }
+
+  .infoList li {
+    flex-direction: column; /* 텍스트와 아이콘 세로 정렬 */
+    align-items: center; /* 중앙 정렬 유지 */
+    margin-bottom: 6px; /* 간격 축소 */
+  }
+
+  .infoList li a {
+    font-size: 12px; /* 모바일 링크 글자 크기 축소 */
+    margin-left: 0; /* 아이콘과 텍스트 간의 간격 제거 (세로 정렬 중심) */
+    margin-top: 4px; /* 세로 정렬 시 위쪽 간격 추가 */
+  }
+
+  .copy {
+    font-size: 10px; /* 카피라이트 글자 크기 축소 */
+    margin-top: 10px; /* 위쪽 여백 줄이기 */
+  }
+}

@@ -1,0 +1,350 @@
+/* 공통 컨테이너 */
+.communityContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 페이지 제목 */
+.pageTitle {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 탭 메뉴 스타일 */
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: #666;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.tab.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+.tab:hover {
+  color: #0056b3;
+}
+
+/* FAQ 섹션 */
+.faqContainer {
+  text-align: left;
+}
+
+.faqHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.faqText h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.faqText p {
+  font-size: 16px;
+  color: #555;
+}
+
+.faqIcon {
+  width: 100px;
+  height: auto;
+}
+
+/* 구분선 스타일 */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* FAQ 리스트 */
+.faqList {
+  padding: 0;
+  list-style: none;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordionHeader span {
+  font-size: 18px;
+  color: #888;
+}
+
+.accordionContent {
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* 하단 버튼 섹션 */
+.inquiryActions {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px; /* 상단과의 간격 */
+  border: 1px solid #ddd;
+}
+
+.inquiryText {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* 버튼 간의 간격 */
+}
+
+.inquiryButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.inquiryButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ===== 1:1 문의 ===== */
+
+.inquiryForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* 연한 테두리 */
+  border-radius: 12px; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  margin: 30px auto;
+  font-size: 15px;
+}
+
+.inquiryForm label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* 폼 항목 간격 */
+}
+
+.inquiryForm span {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1f2937; /* 진한 텍스트 색상 */
+  font-size: 14px;
+}
+
+.inquiryForm select,
+.inquiryForm input,
+.inquiryForm textarea {
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px; /* 필드를 둥글게 만듦 */
+  font-size: 14px;
+  background-color: #f9fafb; /* 연한 배경 */
+  color: #374151; /* 진한 색 */
+  transition: all 0.3s ease;
+}
+
+.inquiryForm select:hover,
+.inquiryForm input:hover,
+.inquiryForm textarea:hover {
+  background-color: #ffffff;
+  border-color: #007bff; /* 호버 시 파란 테두리 */
+}
+
+.inquiryForm select:focus,
+.inquiryForm input:focus,
+.inquiryForm textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* 포커스 강조 */
+}
+
+.inquiryForm textarea {
+  resize: vertical; /* 높이 조정 가능 */
+  min-height: 100px; /* 텍스트 필드 기본 높이 */
+}
+
+.inquiryForm input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.inquiryForm .checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.inquiryForm button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2); /* 버튼에 가벼운 그림자 */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inquiryForm button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 10px rgba(0, 86, 179, 0.3); /* 호버 시 그림자 확대 */
+  transform: translateY(-2px); /* 살짝 올라가는 효과 */
+}
+
+.inquiryForm button:active {
+  transform: translateY(0); /* 클릭 시 원래 위치로 */
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2); /* 그림자 원위치 */
+}
+
+/* 성공 및 에러 메시지 스타일 */
+.inquiryForm p {
+  background-color: #e7f3ff; /* 파란 배경 */
+  padding: 12px;
+  border: 1px solid #bee1ff; /* 연한 파란 테두리 */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #1e40af; /* 파란 텍스트 */
+  font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .inquiryForm {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .inquiryForm button {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  .inquiryForm textarea {
+    min-height: 80px;
+  }
+}
+
+
+/* 공지사항 메인 컨테이너 */
+.noticeContainer {
+  margin-top: 20px;
+}
+
+/* 중요 공지사항 */
+.importantNotice {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px; /* 중요 공지사항 간격 */
+}
+
+/* 일반 공지사항 */
+.noticeItem {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.noticeItem:hover {
+  background-color: #f1f1f1;
+}
+
+/* 제목 및 날짜 */
+.noticeHeader {
+  display: flex;
+  align-items: center;
+}
+
+.noticeIcon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.noticeTitle {
+  font-weight: bold;
+  margin: 0;
+}
+
+.noticeDate {
+  font-size: 12px;
+  color: #888;
+}
+
+/* 세부 내용 */
+.noticeDetail {
+  padding: 10px 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.noticeLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.noticeLink:hover {
+  text-decoration: underline;
+}
+
+/* 구분선 */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}

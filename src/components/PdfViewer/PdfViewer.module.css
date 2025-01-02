@@ -1,0 +1,159 @@
+/* 전체 컨테이너 */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", Arial, sans-serif; /* 더 현대적인 폰트 */
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+    padding: 24px;
+    background: #ffffff; /* 깔끔한 흰색 배경 */
+    border-radius: 16px; /* 조금 더 둥근 모서리 */
+}
+
+/* 제목 스타일 */
+.title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600; /* 약간 두껍게 */
+    text-align: center;
+    color: #222; /* 더 짙은 검정 */
+    letter-spacing: 0.5px; /* 약간의 자간 추가 */
+}
+
+/* 파일 업로드 입력창 스타일 */
+.fileInput {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #555;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fileInput:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 추가 */
+}
+
+.fileInput:active {
+    background-color: #e7e7e7;
+}
+
+/* PDF 캔버스 컨테이너 */
+.canvasContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* 반응형 줄바꿈 */
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* 각 캔버스 스타일 */
+.canvas {
+    border: 1px solid #ececec;
+    width: 100%;
+    max-width: 360px; /* 캔버스 최대 크기 */
+    height: auto; /* 비율 유지 */
+    border-radius: 12px;
+    background: #f8f9fa; /* 캔버스 배경색: 밝은 회색 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* 기본 그림자 */
+}
+
+.canvas:hover {
+    border-color: #ddd; /* 호버 효과 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 더 강한 그림자 */
+}
+
+/* 페이지 컨트롤 버튼 컨테이너 */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 가능 */
+}
+
+/* 버튼 스타일 */
+.button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500; /* 중간 정도 굵기 */
+    color: #fff;
+    background-color: #4a90e2; /* 클래식한 하늘색 */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 74, 140, 0.2); /* 기본 그림자 */
+}
+
+.button:hover {
+    background-color: #357ab8; /* 조금 더 어두운 색상 */
+    box-shadow: 0 4px 12px rgba(0, 53, 100, 0.3); /* 더 강한 그림자 */
+    transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+}
+
+.button:active {
+    background-color: #275a88; /* 클릭 시 더 어두워짐 */
+    transform: translateY(0); /* 눌릴 때 평평해짐 */
+}
+
+.button:disabled {
+    background-color: #ced6e0;
+    color: #828282;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* 에러 메시지 */
+.errorMessage {
+    color: #e74c3c; /* 강렬한 빨간색 */
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 로딩 메시지 */
+.loadingMessage {
+    font-size: 16px;
+    color: #555;
+    font-style: italic; /* 기울임꼴로 표시 */
+    margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .fileInput {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    .canvas {
+        max-width: 100%; /* 작은 화면에서 화면에 맞춤 */
+    }
+}

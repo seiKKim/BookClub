@@ -1,0 +1,208 @@
+/*===============================================================
+유틸리티 클래스
+================================================================*/
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-center {
+  display: flex; 
+  align-items: center;
+}
+
+.gap-small {
+  gap: var(--gap-small);
+}
+
+.gap-medium {
+  gap: var(--gap-medium);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*===============================================================
+버튼 스타일
+================================================================*/
+.btn {
+  all: unset; /* 모든 기본 스타일 초기화 */
+  padding: 10px 16px;
+  font-size: var(--font-size);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-small);
+  box-shadow: var(--box-shadow-light);
+  margin-left: 5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btnPrimary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btnPrimary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btnPrimary:active {
+  background-color: var(--primary-active-color);
+}
+
+.btnDanger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btnDanger:hover {
+  background-color: var(--danger-hover-color);
+}
+
+.btnDanger:active {
+  background-color: var(--danger-active-color);
+}
+
+.btn:disabled {
+  background-color: #bbbbbb;
+  pointer-events: none;
+}
+
+/*===============================================================
+검색창 스타일
+================================================================*/
+.searchBox {
+  position: relative;
+  width: 100%;
+}
+
+.searchInput {
+  width: 60%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+}
+
+.searchInput::placeholder {
+  color: var(--placeholder-color);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+/*===============================================================
+컨테이너, 레이아웃 스타일
+================================================================*/
+.contentWrap {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 70px); /* 푸터 제외한 높이 */
+  padding: 44px 30px 90px;
+  background: var(--bg-color);
+  display: flex;
+  gap: var(--gap-large);
+  box-sizing: border-box;
+}
+
+.whiteBg {
+  background: var(--white-bg);
+  border-radius: var(--border-radius);
+  padding: 48px 84px;
+  box-shadow: var(--box-shadow-light);
+  margin-top: 10px;
+  min-width: 600px;
+}
+
+.inputList {
+  /* display: flex; */
+  gap: var(--gap-small);
+  align-items: center;
+}
+
+/*===============================================================
+테이블 스타일
+================================================================*/
+.boardList table {
+  width: 100%;
+  border-spacing: 0; /* 셀 간격 제거 */
+  border-collapse: collapse; /* 테이블 경계 합치기 */
+  text-align: center;
+  table-layout: fixed; /* 고정된 테이블 레이아웃 */
+}
+
+.boardList table th {
+  background-color: var(--bg-color); /* 테이블 헤더 배경 */
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 12px 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.boardList table td {
+  padding: 12px 10px;
+  vertical-align: middle; 
+  text-align: center;
+  word-break: break-word; /* 긴 텍스트 줄바꿈 */
+}
+
+.boardList table .wid100 {
+  width: 80px;
+}
+
+.boardList table .wid180 {
+  width: 120px;
+}
+
+.boardList table .wid300 {
+  width: 300px;
+}
+
+.boardList table .wid400 {
+  width: 400px;
+}
+
+/*===============================================================
+이미지 및 카테고리 태그 스타일
+================================================================*/
+.boardList table td img {
+  margin: 0 auto;
+  display: block;
+  width: 80px;
+  height: 100px;
+  object-fit: cover; /* 이미지 비율 유지하며 크기 조정 */
+}
+
+.categoryTag {
+  display: inline-block;
+  margin: 2px 3px;
+  padding: 4px 8px;
+  background-color: #f0f4f8;
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: var(--font-size);
+}
+
+.categoryTag:hover {
+  background-color: var(--hover-color);
+}
+

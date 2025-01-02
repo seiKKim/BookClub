@@ -1,0 +1,268 @@
+/* 전체 컨테이너 스타일 */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px; /* 더 부드러운 곡선 효과 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 그림자 강화 */
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* 제목 스타일 */
+  .title {
+    font-size: 26px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 0.5px; /* 글자 간격 추가 */
+  }
+  
+  /* 검색 필터 영역 스타일 */
+  .filterBar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #fbfbfb; /* 살짝 밝은 배경 */
+  }
+  
+  .filterBar label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .filterBar input[type="date"],
+  .filterBar select,
+  .filterBar button {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff; /* 기본 배경을 흰색으로 */
+  }
+  
+  .filterBar button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .filterBar button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 테이블 스타일 */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    color: #444;
+    font-weight: bold;
+  }
+  
+  .table tr:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+  
+  .table .noData {
+    font-size: 16px;
+    color: #888;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* 체크박스 및 라디오 버튼 */
+  .table input[type="checkbox"] {
+    transform: scale(1.2); /* 크기 조정 */
+    cursor: pointer;
+  }
+  
+  /* 폼 */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* 각 폼 간격을 넓힘 */
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .formGroup label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* 입력 필드 공통 스타일 */
+  .formGroup input[type="text"],
+  .formGroup input[type="date"],
+  .formGroup textarea,
+  .formGroup input[type="file"],
+  .formGroup select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .formGroup input[type="text"]:focus,
+  .formGroup input[type="date"]:focus,
+  .formGroup textarea:focus,
+  .formGroup input[type="file"]:focus,
+  .formGroup select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* 텍스트 영역 */
+  .textarea {
+    resize: vertical;
+    height: 120px;
+    font-family: inherit;
+  }
+  
+  /* 체크박스 및 라디오 그룹 */
+  .radioGroup {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .radioGroup label {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* 창 크기 설정 */
+  .dateInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .dateInput span {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* 파일 업로드 */
+  .formGroup input[type="file"] {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* 버튼 그룹 */
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  /* 버튼 공통 스타일 */
+  .button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .button.save {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .button.save:hover {
+    background-color: #0056b3;
+  }
+  
+  .button.cancel {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .button.cancel:hover {
+    background-color: #c82333;
+  }
+  
+  /* 페이징 스타일 */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  /* 반응형 */
+  @media (max-width: 768px) {
+    .filterBar {
+      flex-direction: column;
+    }
+  
+    .table th,
+    .table td,
+    .button {
+      font-size: 12px;
+    }
+  
+    .button {
+      padding: 8px 16px;
+    }
+  
+    .formGroup input,
+    .formGroup textarea {
+      padding: 10px;
+    }
+  }
+  

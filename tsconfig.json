@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"], // DOM 및 최신 ESNext 기능 사용
+    "allowJs": true,                         // JavaScript 파일 허용
+    "skipLibCheck": true,                    // 라이브러리 타입 검사 생략 (컴파일 속도 개선)
+    "strict": true,                          // 엄격한 타입 검사 활성화
+    "noEmit": true,                          // 컴파일 출력 파일 생성 비활성화
+    "esModuleInterop": true,                 // CommonJS와 ES 모듈 호환
+    "module": "esnext",                      // 최신 모듈 시스템
+    "moduleResolution": "bundler",           // 번들러 방식 모듈 해석
+    "resolveJsonModule": true,               // JSON 파일 import 지원
+    "isolatedModules": true,                 // 모듈 레벨 타입 검사 활성화
+    "jsx": "preserve",                       // JSX를 그대로 유지하여 Next.js가 처리하도록 설정
+    "incremental": true,                     // 증분 컴파일
+    "allowSyntheticDefaultImports": true,    // 기본 export 없이도 import 가능
+    "typeRoots": ["./node_modules/@types", "./@types"], // 추가 타입 지정 경로
+    "types": ["next-auth", "node"],          // 사용할 타입 정의
+    "paths": {
+      "@/*": ["./src/*"]                     // 절대 경로 alias 사용 설정
+    },
+    "plugins": [
+      {
+        "name": "next"                       // Next.js IDE 플러그인
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",                         // Next.js 타입 정의
+    "**/*.ts",                               // 모든 TypeScript 파일 포함
+    "**/*.tsx",                              // 모든 TSX 파일 포함
+    ".next/types/**/*.ts",                   // Next.js 빌드 타입 포함
+    "src/app/layout.tsx"                     // 특정 파일 포함 (수동 추가)
+  ],
+  "exclude": ["node_modules"]                // node_modules 제외
+}

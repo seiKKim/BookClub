@@ -1,0 +1,179 @@
+/* 전체 컨테이너 스타일 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 드래그 앤 드롭 영역 */
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 150px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fileUpload.dragging {
+  border-color: #4aa1ff;
+  background-color: #e3f2fd;
+}
+
+/* 파일 input 숨기기 */
+.fileInput {
+  display: none;
+}
+
+/* "파일 정보" 영역 */
+.fileInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 10px;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 5px;
+  color: #2e7d32;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.fileInfo span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  font-weight: bold;
+}
+
+.fileInfo button {
+  border: none;
+  background-color: #f44336;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fileInfo button:hover {
+  background-color: #d32f2f;
+}
+
+/* 버튼 스타일 */
+.customFileInputButton,
+.uploadButton {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #4a5361;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customFileInputButton:hover,
+.uploadButton:hover {
+  background-color: #3f3f66;
+}
+
+.uploadButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 에러 메시지 스타일 */
+.errorMessage {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 진행률 컨테이너 */
+.progressContainer {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+  height: 12px;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #3b5998;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.progressText {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* 업로드된 파일 리스트 */
+.uploadedFiles {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.fileItem span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+  font-weight: bold;
+}
+
+.downloadButton {
+  padding: 6px 12px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #218838;
+}

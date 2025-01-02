@@ -1,0 +1,204 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 구독 상태를 나타내는 열거형
+enum SubscriptionStatus {
+  ACTIVE    // 활성 상태
+  INACTIVE  // 비활성 상태
+  CANCELED  // 취소된 상태
+}
+
+// 책의 포맷을 나타내는 열거형
+enum BookFormat {
+  EBOOK     // 전자책
+  AUDIOBOOK // 오디오북
+}
+
+// 성별을 나타내는 열거형
+enum Gender {
+  MALE      // 남성
+  FEMALE    // 여성
+  OTHER     // 기타
+}
+
+enum UserRole {
+  R   // 관리자(읽기 권한)
+  U   // 사용자(수정 권한)
+}
+
+// 사용자 모델에 권한 필드 추가
+model User {
+  userId         Int           @id @default(autoincrement()) // 사용자 ID (자동 증가)
+  email          String        @unique                     // 이메일 (고유)
+  password       String        // 비밀번호
+  name           String?       // 사용자 이름 (선택적)
+  phoneNumber    String?       @db.VarChar(15)             // 전화번호 (최대 15자)
+  birthDate      DateTime?     // 생년월일 (선택적)
+  gender         Gender?       // 성별 (Enum 사용)
+  profileImage   String?       // 프로필 이미지 URL (선택적)
+  emailVerified  Boolean       @default(false)             // 이메일 인증 상태
+  isActive       Boolean       @default(true)              // 계정 활성화 여부
+  role           UserRole      @default(U)                 // 사용자 권한 (기본값: 사용자)
+  subscriptions  Subscription[]                           // 사용자 구독 목록
+  reviews        Review[]                                // 사용자 리뷰 목록
+  readingHistory ReadingHistory[]                       // 독서 기록 목록
+  favoriteGenres FavoriteGenre[]                        // 사용자가 선호하는 장르 목록
+  inquiries      Inquiry[]                              // 1:1 문의 목록
+  createdAt      DateTime      @default(now())           // 생성 시간
+  updatedAt      DateTime      @updatedAt                // 업데이트 시간
+  isDeleted      Boolean       @default(false)           // 삭제 여부
+}
+
+// 이메일 인증번호를 저장할 모델
+model EmailVerification {
+  id          Int      @id @default(autoincrement()) // 기본 키
+  email       String   @unique                      // 이메일 (고유)
+  code        String                               // 인증 코드
+  expiresAt   DateTime                            // 만료 시간
+  createdAt   DateTime  @default(now())            // 생성 시간
+  updatedAt   DateTime  @updatedAt                 // 업데이트 시간
+}
+
+// 선호 장르 모델
+model FavoriteGenre {
+  id     Int    @id @default(autoincrement()) // 기본 키
+  user   User   @relation(fields: [userId], references: [userId]) // 사용자와의 관계
+  userId Int    // 사용자 ID
+  genre  String // 장르 이름
+}
+
+// 구독 모델
+model Subscription {
+  subscriptionId Int               @id @default(autoincrement()) // 구독 ID (자동 증가)
+  user           User              @relation(fields: [userId], references: [userId]) // 사용자와의 관계
+  userId         Int               // 사용자 ID
+  status         SubscriptionStatus @default(ACTIVE) // 구독 상태 (기본값: ACTIVE)
+  startDate      DateTime          @default(now())   // 시작 날짜
+  endDate        DateTime?         // 종료 날짜 (선택적)
+  createdAt      DateTime          @default(now())   // 생성 시간
+  updatedAt      DateTime          @updatedAt        // 업데이트 시간
+    isDeleted      Boolean           @default(false) // 삭제 여부
+}
+
+// 카테고리 모델
+model Category {
+  categoryId   Int         @id @default(autoincrement()) // 카테고리 ID (자동 증가)
+  name         String      @unique // 카테고리 이름 (고유)
+  description  String?     // 카테고리 설명 (선택적)
+  parentId     Int?        // 부모 카테고리 ID (선택적)
+  parent       Category?   @relation("ParentRelation", fields: [parentId], references: [categoryId]) // 부모 카테고리와의 관계
+  children     Category[]  @relation("ParentRelation") // 자식 카테고리 목록
+  books        Book[]      @relation("BookCategoriesRelation") // 해당 카테고리에 속하는 책 목록
+  createdAt    DateTime    @default(now()) // 생성 시간
+  updatedAt    DateTime    @updatedAt      // 업데이트 시간
+}
+
+// 책 모델
+model Book {
+  bookId        Int        @id @default(autoincrement()) // 책 ID (자동 증가)
+  title         String     // 책 제목
+  author        String     // 저자
+  description   String?    // 책 설명 (선택적)
+  coverImage    String     // 책 표지 이미지 URL
+  format        BookFormat // 책 포맷 (EBOOK 또는 AUDIOBOOK)
+  genre         String     // 장르
+  contentUrl    String?    // 책 내용의 URL (선택적)
+  categories    Category[] @relation("BookCategoriesRelation") // 책이 속하는 카테고리 목록
+  chapters      Chapter[]  // 책의 장 목록
+  readingHistory ReadingHistory[] // 독서 기록
+  reviews       Review[]   // 이 책에 대한 리뷰 목록
+  isDeleted     Boolean     @default(false) // 책 삭제 여부
+  createdAt     DateTime    @default(now()) // 생성 시간
+  updatedAt     DateTime    @updatedAt      // 업데이트 시간
+}
+
+// 장 모델
+model Chapter {
+  chapterId     Int        @id @default(autoincrement()) // 장 ID (자동 증가)
+  title         String     // 장 제목
+  content       String?    // 장 내용 (선택적)
+  audioUrl      String?    // 오디오 URL (선택적)
+  book          Book       @relation(fields: [bookId], references: [bookId]) // 책과의 관계
+  bookId        Int         // 책 ID
+  createdAt     DateTime    @default(now()) // 생성 시간
+  updatedAt     DateTime    @updatedAt // 업데이트 시간
+}
+
+// 리뷰 모델
+model Review {
+  reviewId      Int        @id @default(autoincrement()) // 리뷰 ID (자동 증가)
+  content       String     // 리뷰 내용
+  rating        Int        @default(0)                  // 별점(평점, 기본값 포함)
+  user          User       @relation(fields: [userId], references: [userId]) // 사용자와의 관계
+  userId        Int        // 사용자 ID
+  book          Book       @relation(fields: [bookId], references: [bookId]) // 책과의 관계
+  bookId        Int        // 책 ID
+  createdAt     DateTime   @default(now()) // 생성 시간
+}
+
+// 독서 기록 모델
+model ReadingHistory {
+  historyId     Int        @id @default(autoincrement()) // 독서 기록 ID (자동 증가)
+  user          User       @relation(fields: [userId], references: [userId]) // 사용자와의 관계
+  userId        Int        // 사용자 ID
+  book          Book       @relation(fields: [bookId], references: [bookId]) // 책과의 관계
+  bookId        Int        // 책 ID
+  progress      Float      // 진행 상태 (0.0에서 1.0 사이)
+  lastAccessed  DateTime   // 마지막으로 읽은 시간
+  createdAt     DateTime   @default(now()) // 생성 시간
+  updatedAt     DateTime   @updatedAt // 업데이트 시간
+}
+
+// 공지사항 모델
+model Notice {
+  noticeId      Int        @id @default(autoincrement()) // 공지사항 ID (자동 증가)
+  title         String     // 제목
+  content       String     // 내용
+  isActive      Boolean    @default(true) // 공지가 활성화되었는지 여부
+  createdAt     DateTime   @default(now()) // 생성 시간
+  updatedAt     DateTime   @updatedAt      // 업데이트 시간
+}
+
+// FAQ 모델
+model FAQ {
+  faqId         Int        @id @default(autoincrement()) // FAQ ID (자동 증가)
+  question      String     // 질문
+  answer        String     // 답변
+  isPublic      Boolean    @default(true) // FAQ가 공개 상태인지 여부
+  createdAt     DateTime   @default(now()) // 생성 시간
+  updatedAt     DateTime   @updatedAt      // 업데이트 시간
+}
+
+// 1:1 문의 모델B
+model Inquiry {
+  inquiryId     Int        @id @default(autoincrement()) // 문의사항 ID (자동 증가)
+  user          User       @relation(fields: [userId], references: [userId]) // 사용자와의 관계
+  userId        Int        // 사용자 ID
+  subject       String     // 제목
+  message       String     // 내용
+  response      String?    // 답변 (선택적)
+  isResolved    Boolean    @default(false) // 문의 해결 여부
+  createdAt     DateTime   @default(now()) // 생성 시간
+  updatedAt     DateTime   @updatedAt      // 업데이트 시간
+}
+
+//관리자Page에서 Popup관리
+model Popup {
+  id         Int      @id @default(autoincrement())
+  title      String
+  position   String   // top, center, bottom
+  width      Int      // 창 가로 크기(px)
+  height     Int      // 창 세로 크기(px)
+  content    String
+  startDate  DateTime
+  endDate    DateTime
+  isVisible  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
