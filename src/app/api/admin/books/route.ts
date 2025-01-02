@@ -7,6 +7,8 @@ import path from "path";
 import prisma from "@/lib/prisma";
 import { v4 as uuidv4 } from "uuid";
 
+export const dynamic = 'force-dynamic'; // 이 부분을 추가하세요.
+
 // Object Storage 환경 설정
 const OS_STORAGE_ENDPOINT = process.env.REACT_APP_OS_STORAGE_ENDPOINT || "";
 const OS_IDENTITY_ENDPOINT = process.env.REACT_APP_OS_IDENTITY_ENDPOINT || "";
